@@ -21,11 +21,21 @@
         padding-top: 56px; /* Adjust this value as needed */
       }
     </style>
+
+    <style>
+        #myNavbar {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        transition: top 0.2s ease-in-out;
+        }
+    </style>
+
+    
   </head>
 
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <nav id="myNavbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -60,6 +70,34 @@
         <p class="lead">Content for Page 3.</p>
       </div>
     </main><!-- /.container -->
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+  
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                  behavior: 'smooth'
+              });
+          });
+        });
+    </script>
+
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        var page1Height = document.getElementById('section1').offsetHeight;
+        var navbar = document.getElementById("myNavbar");
+        var navbarHeight = navbar.offsetHeight;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos && currentScrollPos <= page1Height) {
+            navbar.style.top = "0px";
+        } else {
+            navbar.style.top = "-" + navbarHeight + "px";
+        }
+        prevScrollpos = currentScrollPos;
+        }
+    </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
