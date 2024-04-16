@@ -56,7 +56,7 @@
       margin-top: 5rem; /* Adjust this value to move the text further down */
     }
     .lead2 {
-      font-size: 1rem; /* Adjust this value to change the font size */
+      font-size: 1.25rem; /* Adjust this value to change the font size */
       margin-top: 5rem; /* Adjust this value to move the text further down */
       color: #a9a9a9;
     }
@@ -98,7 +98,11 @@
       vertical-align: middle; /* Add this line */
     }
 
-    @media screen and (max-width: 2560px) {
+    .colored-text {
+      color: #a9a9a9; /* Replace 'red' with your desired color */
+    }
+
+    @media screen and (max-width: 1920px) {
       body {
         font-size: 1rem;
       }
@@ -108,8 +112,12 @@
         line-height: 3.6rem; /* 4.5rem * 0.8 = 3.6rem */
       }
 
-      .lead1, .lead2 {
-        font-size: 0.8rem; /* 1rem * 0.8 = 0.8rem */
+      .lead1 {
+        font-size: 1rem;
+      }
+
+      .lead2 {
+        font-size: 1rem;
       }
     }
 
@@ -164,7 +172,7 @@
         is to sort beatmaps based on their similarities.<br> The idea was inspired by an older abandoned project that aimed to do the same thing, except this is a more accurate revision of it.
       <br><br>
         Osu beatmaps are files containing timing points and various note types distributed over the duration of a song, including other factors.<br>This can be utilized in calculations to find, match, and display results based on the similarity of specific factors using JS Math.
-      Yada yada.<br><br>Essentially the program helps you to find more maps that feel the same.</p>
+        <span class="colored-text">Yada yada.</span><br><br>Essentially the program helps you to find more maps that feel the same.</p>
     </div>
     <div id="section3" class="starter-template full-vh" style="background-color: #0d1117; text-align: center; height: 100vh;">
       <h1>Changelogs</h1>
