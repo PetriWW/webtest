@@ -1,11 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-
-  <title>Dorya</title>
+  <title>Unfinished</title>
 
   <!-- Bootstrap core CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
@@ -15,6 +16,9 @@
 
   <!-- Custom styles for this template -->
   <link href="starter-template.css" rel="stylesheet">
+
+  <!-- Material Symbols Outlined font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
   <style>
     @font-face {
@@ -39,110 +43,139 @@
       line-height: 72px;
     }
 
-      .full-vh {
-        min-height: 100vh;
-        padding-top: 60px; /* Adjust this value as needed OG 56*/
-      }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      padding-top: 120px;
+      gap: 60px; /* Adjust this value to change the space between the buttons */
+    }
+&
+    .lead {
+      font-size: 20px; /* Adjust this value to change the font size */
+      margin-top: 80px; /* Adjust this value to move the text further down */
+    }
+    .lead2 {
+      font-size: 16px; /* Adjust this value to change the font size */
+      margin-top: 60px; /* Adjust this value to move the text further down */
+      color: #a9a9a9;
+    }
 
-      .container-fluid {
-        padding-left: 0;
-        padding-right: 0;
-      }
+    .full-vh {
+      min-height: 100vh;
+      padding-top: 60px;
+    }
 
-      .navbar {
-        background-color: #010409;
-      }
+    .container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
 
-      .navbar-dark .navbar-nav .nav-link {
-        color: #808080;
-      }
+    .navbar {
+      background-color: #010409;
+    }
 
-      .navbar-dark .navbar-nav .nav-link:hover {
-        color: #ffffff;
-      }
-    </style>
+    .navbar-dark .navbar-nav .nav-link {
+      color: #808080;
+    }
 
-    <style>
-      #myNavbar {
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #ffffff;
+    }
+
+    #myNavbar {
       background-color: #000000;
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: 8px;
+      padding-bottom: 8px;
       transition: top 0.2s ease-in-out;
-      }
+    }
+
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 24px;
+      line-height: 1; /* Add this line */
+      vertical-align: middle; /* Add this line */
+    }
+
   </style>
-  </head>
+</head>
+<body>
+  <nav id="myNavbar" class="navbar navbar-expand-md navbar-dark fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <body>
-    <nav id="myNavbar" class="navbar navbar-expand-md navbar-dark fixed-top">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#section1">Page 1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section2">Page 2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section3">Page 3</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#section1"><span class="material-symbols-outlined">&#xe88a;</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section2">Changelogs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section3">FAQ</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <main role="main" class="container-fluid">
-      <div id="section1" class="starter-template full-vh" style="background-color: #0d1117; text-align: center;">
-        <h1 style="padding-top: 100px;">Project Mapperino</h1>
-        <h1>Beatmap assistant for Osu!</h1>
-        <p class="lead">Content for Page 1.</p>
+  <main role="main" class="container-fluid">
+    <div id="section1" class="starter-template full-vh" style="background-color: #0d1117; text-align: center;">
+      <h1 style="padding-top: 100px;">Project Mapperino</h1>
+      <h1>Beatmap assistant for Osu!</h1>
+      <p class="lead">Modern light-weight desktop client for assisting with beatmap search.<br>A tool that sorts out your beatmaps based on similarity.</p>
+      <p class="lead2">Want to find beatmaps that feel like the one you just played? Try out the tool now!</p>
+      <!-- Button container -->
+      <div class="button-container">
+        <!-- Download button -->
+        <a href="http://example.com" class="btn btn-primary">
+          <span class="material-symbols-outlined">&#xf090;</span> Download
+        </a>
+        <!-- Changelogs button -->
+        <a href="#section2" class="btn btn-success">
+          <span class="material-symbols-outlined">&#xea0b;</span> Changelogs
+        </a>
       </div>
-      <div id="section2" class="starter-template full-vh" style="background-color: #161b22; text-align: center; height: 200vh;">
-        <h1>Page 2</h1>
-        <p class="lead">Content for Page 2.</p>
-      </div>
-      <div id="section3" class="starter-template full-vh" style="background-color: #161b22; text-align: center;">
-        <h1>FAQ</h1>
-        <p class="lead">Content for Page 3.</p>
-      </div>
-    </main><!-- /.container -->
+    </div>
+    <div id="section2" class="starter-template full-vh" style="background-color: #161b22; text-align: center; height: 200vh;">
+      <h1>What is this?</h1>
+      <p class="lead">Content for Page 2.</p>
+    </div>
+    <div id="section3" class="starter-template full-vh" style="background-color: #161b22; text-align: center;">
+      <h1>FAQ</h1>
+      <p class="lead">Content for Page 3.</p>
+    </div>
+  </main>
 
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-              e.preventDefault();
-  
-              document.querySelector(this.getAttribute('href')).scrollIntoView({
-                  behavior: 'smooth'
-              });
-          });
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
         });
-    </script>
+      });
+    });
 
-    <script>
-        var prevScrollpos = window.pageYOffset;
-        var page1Height = document.getElementById('section1').offsetHeight;
-        var navbar = document.getElementById("myNavbar");
-        var navbarHeight = navbar.offsetHeight;
-        window.onscroll = function() {
-        var currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos && currentScrollPos <= page1Height) {
-            navbar.style.top = "0px";
-        } else {
-            navbar.style.top = "-" + navbarHeight + "px";
-        }
-        prevScrollpos = currentScrollPos;
-        }
-    </script>
+    var prevScrollpos = window.pageYOffset;
+    var page1Height = document.getElementById('section1').offsetHeight;
+    var navbar = document.getElementById("myNavbar");
+    var navbarHeight = navbar.offsetHeight;
+    window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos && currentScrollPos <= page1Height) {
+        navbar.style.top = "0px";
+      } else {
+        navbar.style.top = "-" + navbarHeight + "px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  </script>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
 </html>
