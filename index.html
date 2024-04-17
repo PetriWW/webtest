@@ -21,65 +21,92 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
   <style>
+    /* Font face */
     @font-face {
       font-family: 'Mona Sans';
-      src:
-        url('Mona Sans/Mona-Sans.woff2') format('woff2 supports variations'),
-        url('Mona Sans/Mona-Sans.woff2') format('woff2-variations');
+      src: url('Mona Sans/Mona-Sans.woff2') format('woff2 supports variations'),
+           url('Mona Sans/Mona-Sans.woff2') format('woff2-variations');
       font-weight: 200 900;
       font-stretch: 75% 125%;
     }
-
+  
+    /* Body */
     body {
       color: #ffffff;
       font-family: 'Roboto', sans-serif;
       font-size: 1rem;
+      position: relative;
+      
     }
-
-    h1 {
+  
+    /* Headings */
+    h1, h2 {
       font-family: 'Mona Sans', MonaSansFallback, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
       font-weight: 700;
       color: rgb(255, 255, 255);
-      font-size: 4.5rem; /* 72px / 16 = 4.5rem */
-      line-height: 4.5rem; /* 72px / 16 = 4.5rem */
+      font-size: 4.5rem;
+      line-height: 4.5rem;
+      margin-bottom: 1rem; /* Moved from the separate h2 selector */
+      z-index: 3;
     }
-
-    
-
+  
+    /* Buttons */
     .button-container {
       display: flex;
       justify-content: center;
       padding-top: 5rem;
-      gap: 3.75rem; /* Adjust this value to change the space between the buttons */
+      gap: 3.75rem;
     }
 
-    .lead {
-      max-width: 100rem;
-      margin: 0 auto;
-      font-size: 1.25rem; /* Adjust this value to change the font size */
-      margin-top: 5rem; /* Adjust this value to move the text further down */
+    .title {
+      position: relative;
+      padding-top: 100px;
+      margin-bottom: 5rem;
+      z-index: 5;
     }
-    .lead2 {
+
+    /* Lead Text */
+    .lead, .lead2, .lead3, .lead4 {
       max-width: 100rem;
       margin: 0 auto;
-      font-size: 1.25rem; /* Adjust this value to change the font size */
-      margin-top: 5rem; /* Adjust this value to move the text further down */
+      font-size: 1.25rem;
+    }
+
+    .lead, .lead2 {
+      margin-top: 5rem;
+    }
+
+    .lead2, .colored-text {
       color: #a9a9a9;
     }
 
-
+    /* Full Viewport Height */
     .full-vh {
       min-height: 100vh;
-      padding-top: 3.75rem;;
+      padding-top: 3.75rem;
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.7);
     }
 
+    /* Fluid Container */
     .container-fluid {
       padding-left: 0;
       padding-right: 0;
+      position: relative;
+      z-index: 2;
     }
 
-    .navbar {
+    /* Navbar */
+    .navbar, #myNavbar {
       background-color: #010409;
+      z-index: 3;
+    }
+
+    #myNavbar {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      transition: top 0.2s ease-in-out;
     }
 
     .navbar-dark .navbar-nav .home-icon .material-symbols-outlined {
@@ -90,46 +117,126 @@
       color: #ffffff;
     }
 
-    #myNavbar {
-      background-color: #010409;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      transition: top 0.2s ease-in-out;
-    }
-
+    /* Material Symbols */
     .material-symbols-outlined {
       font-family: 'Material Symbols Outlined';
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       font-size: 1.5rem;
-      line-height: 1; /* Add this line */
-      vertical-align: middle; /* Add this line */
+      line-height: 1;
+      vertical-align: middle;
+      z-index: 2;
     }
 
-    .colored-text {
-      color: #a9a9a9; /* Replace 'red' with your desired color */
+    /* Cards */
+    .card, .cardguide {
+      background-color: rgba(22, 25, 28, 0.6);
+      padding: 3rem;
+      margin-bottom: 5rem;
+      border-radius: 1.5rem;
+      max-width: 100rem;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 4;
     }
 
+    .cardguide {
+      display: flex;
+      justify-content: space-between;
+    }
 
+    .cardguide .step {
+      flex: 1;
+      margin: 1rem;
+      z-index: 3;
+    }
+
+    .starter-template {
+      position: relative;
+      z-index: 0;
+      background: white;
+    }
+
+    .bgvideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+
+    .bgvideo video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Hide the video on the first page */
+    #section1 {
+      background: white;
+      z-index: 2;
+    }
+
+    #section1 .bgvideo {
+      display: none;
+    }
+
+    #section2 {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.7);
+    }
+  
+    /* Media Queries */
     @media screen and (max-width: 1920px) {
       body {
-        font-size: 1rem;
+        font-size: 0.8rem; /* 80% of 1rem */
       }
 
-      h1 {
-        font-size: 3.6rem; /* 4.5rem * 0.8 = 3.6rem */
-        line-height: 3.6rem; /* 4.5rem * 0.8 = 3.6rem */
+      h1, h2 {
+        font-size: 3.6rem; /* 80% of 4.5rem */
+        line-height: 3.6rem; /* 80% of 4.5rem */
+        margin-bottom: 0.8rem; /* 80% of 1rem */
       }
 
-      .lead1 {
-        font-size: 1rem;
+      .button-container {
+        padding-top: 4rem; /* 80% of 5rem */
+        gap: 3rem; /* 80% of 3.75rem */
       }
 
-      .lead2 {
-        font-size: 1rem;
+      .title {
+        padding-top: 80px; /* 80% of 100px */
+        margin-bottom: 4rem; /* 80% of 5rem */
+      }
+
+      .lead, .lead2, .lead3, .lead4 {
+        font-size: 1rem; /* 80% of 1.25rem */
+      }
+
+      .lead, .lead2 {
+        margin-top: 4rem; /* 80% of 5rem */
+      }
+
+      .full-vh {
+        padding-top: 3rem; /* 80% of 3.75rem */
+      }
+
+      .card, .cardguide {
+        padding: 2.4rem; /* 80% of 3rem */
+        margin-bottom: 4rem; /* 80% of 5rem */
+        border-radius: 1.2rem; /* 80% of 1.5rem */
+      }
+
+      .material-symbols-outlined {
+        font-size: 1.2rem; /* 80% of 1.5rem */
       }
     }
-
   </style>
+
 </head>
 <body>
   <nav id="myNavbar" class="navbar navbar-expand-md navbar-dark fixed-top">
@@ -151,11 +258,20 @@
         <li class="nav-item">
           <a class="nav-link" href="#section4">FAQ</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">Contact</a>
+        </li>
       </ul>
     </div>
   </nav>
 
-  <main role="main" class="container-fluid">
+  <div class="bgvideo">
+    <video id="video1" playsinline autoplay muted loop>
+      <source src="bgvideo.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <main role="main">
     <div id="section1" class="starter-template full-vh" style="background-color: #0d1117; text-align: center;">
       <h1 style="padding-top: 100px;">Project Mapperino</h1>
       <h1>Beatmap assistant for Osu!</h1>
@@ -174,23 +290,40 @@
         </a>
       </div>
     </div>
-    <div id="section2" class="starter-template full-vh" style="background-color: #161b22; text-align: center; height: 150vh;">
-      <h1 style="padding-top: 100px;">What is this? How does it work?</h1>
-      <p class="lead">Mapperino is a collaboration program built in Electron, made by people who have wished for features that didn't exist. The intended purpose of this application
-        is to sort beatmaps based on their similarities. The idea was inspired by an older abandoned project that aimed to do the same thing, except this is a more accurate revision of it.
-      <br><br>
-        Osu beatmaps are files containing timing points and various note types distributed over the duration of a song, including other factors. This can be utilized in calculations to find, match, and display results based on the similarity of specific factors using JS Math.
-        <span class="colored-text">Yada yada.</span><br><br>Essentially the program helps you to find more maps that feel the same.</p>
+    <div class="container-fluid">
+      <div id="section2" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 0.5); text-align: center; height: 125vh;">
+      <h2 class="title">What is this? How does it work?</h2>
+
+      <div class="card">
+        <p class="lead3">Mapperino is a collaboration program built in Electron, made by people who have wished for features that didn't exist. The intended purpose of this application
+          is to sort beatmaps based on their similarities. The idea was inspired by an older abandoned project that aimed to do the same thing, except this is a more accurate revision of it.
+          <br><br>
+          Osu beatmaps are files containing timing points and various note types distributed over the duration of a song, including other factors. This can be utilized in calculations to find, match, and display results based on the similarity of specific factors using JS Math.
+          <span class="colored-text">Yada yada.</span><br><br>Essentially the program helps you to find more maps that feel the same.</p>
+      </div>
+
+      <div class="cardguide">
+        <div class="step">
+          <h2>Step 1</h2><br>
+          <p class="lead4">Download the latest version <a href="www.example.com">here</a> and proceed with the installation. The app requires an internet connection for the next step.</p>
+        </div>
+        <div class="step">
+          <h2>Step 2</h2><br>
+          <p class="lead4">Open the application and complete authorization. This process is handled by OAuth 2.0 provided by Osu!</p>
+        </div>
+        <div class="step">
+          <h2>Step 3</h2><br>
+          <p class="lead4">The program will prompt for the game location and proceed to search for beatmaps. From there, you can select a beatmap, and the program will display results.</p>
+        </div>
+      </div>
     </div>
+  </div>
 
-    
-
-  
-    <div id="section3" class="starter-template full-vh" style="background-color: #0d1117; text-align: center; height: 100vh;">
+    <div id="section3" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 0.5); text-align: center; height: 125vh;">
       <h1 style="padding-top: 100px;">Changelogs</h1>
       <p class="lead">Insert logs.</p>
     </div>
-    <div id="section4" class="starter-template full-vh" style="background-color: #161b22; text-align: center; height: 100vh;">
+    <div id="section4" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 1); text-align: center; height: 100vh;">
       <h1 style="padding-top: 100px;">FAQ</h1>
       <p class="lead">Content for Page 4.</p>
     </div>
