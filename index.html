@@ -44,6 +44,8 @@
       line-height: 4.5rem; /* 72px / 16 = 4.5rem */
     }
 
+    
+
     .button-container {
       display: flex;
       justify-content: center;
@@ -52,14 +54,19 @@
     }
 
     .lead {
+      max-width: 100rem;
+      margin: 0 auto;
       font-size: 1.25rem; /* Adjust this value to change the font size */
       margin-top: 5rem; /* Adjust this value to move the text further down */
     }
     .lead2 {
+      max-width: 100rem;
+      margin: 0 auto;
       font-size: 1.25rem; /* Adjust this value to change the font size */
       margin-top: 5rem; /* Adjust this value to move the text further down */
       color: #a9a9a9;
     }
+
 
     .full-vh {
       min-height: 100vh;
@@ -75,16 +82,16 @@
       background-color: #010409;
     }
 
-    .navbar-dark .navbar-nav .nav-link {
+    .navbar-dark .navbar-nav .home-icon .material-symbols-outlined {
       color: #808080;
     }
 
-    .navbar-dark .navbar-nav .nav-link:hover {
+    .navbar-dark .navbar-nav .home-icon:hover .material-symbols-outlined {
       color: #ffffff;
     }
 
     #myNavbar {
-      background-color: #000000;
+      background-color: #010409;
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
       transition: top 0.2s ease-in-out;
@@ -101,6 +108,7 @@
     .colored-text {
       color: #a9a9a9; /* Replace 'red' with your desired color */
     }
+
 
     @media screen and (max-width: 1920px) {
       body {
@@ -132,10 +140,12 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#section1"><span class="material-symbols-outlined">&#xe88a;</span></a>
+          <a class="nav-link home-icon" href="#section1"><span class="material-symbols-outlined">&#xe88a;</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#section2">Guide</a>
+          <a class="nav-link" href="#section2">
+            <span class="material-symbols-outlined">&#xe88e;</span>
+          </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#section3">Changelogs</a>
@@ -151,7 +161,7 @@
     <div id="section1" class="starter-template full-vh" style="background-color: #0d1117; text-align: center;">
       <h1 style="padding-top: 100px;">Project Mapperino</h1>
       <h1>Beatmap assistant for Osu!</h1>
-      <p class="lead">Modern light-weight desktop client for assisting with beatmap search.<br>A tool that sorts out your beatmaps based on similarity.</p>
+      <p class="lead">Modern light-weight desktop client for assisting with beatmap search. A tool that sorts out your beatmaps based on similarity.</p>
       <p class="lead2">Want to find beatmaps that feel like the one you just played? Try out the tool now!</p>
 
       <!-- Button container -->
@@ -167,19 +177,23 @@
       </div>
     </div>
     <div id="section2" class="starter-template full-vh" style="background-color: #161b22; text-align: center; height: 150vh;">
-      <h1>What is this? How does it work?</h1>
+      <h1 style="padding-top: 100px;">What is this? How does it work?</h1>
       <p class="lead">Mapperino is a collaboration program built in Electron, made by people who have wished for features that didn't exist. The intended purpose of this application
-        is to sort beatmaps based on their similarities.<br> The idea was inspired by an older abandoned project that aimed to do the same thing, except this is a more accurate revision of it.
+        is to sort beatmaps based on their similarities. The idea was inspired by an older abandoned project that aimed to do the same thing, except this is a more accurate revision of it.
       <br><br>
-        Osu beatmaps are files containing timing points and various note types distributed over the duration of a song, including other factors.<br>This can be utilized in calculations to find, match, and display results based on the similarity of specific factors using JS Math.
+        Osu beatmaps are files containing timing points and various note types distributed over the duration of a song, including other factors. This can be utilized in calculations to find, match, and display results based on the similarity of specific factors using JS Math.
         <span class="colored-text">Yada yada.</span><br><br>Essentially the program helps you to find more maps that feel the same.</p>
     </div>
+
+    
+
+  
     <div id="section3" class="starter-template full-vh" style="background-color: #0d1117; text-align: center; height: 100vh;">
-      <h1>Changelogs</h1>
+      <h1 style="padding-top: 100px;">Changelogs</h1>
       <p class="lead">Insert logs.</p>
     </div>
     <div id="section4" class="starter-template full-vh" style="background-color: #161b22; text-align: center; height: 100vh;">
-      <h1>FAQ</h1>
+      <h1 style="padding-top: 100px;">FAQ</h1>
       <p class="lead">Content for Page 4.</p>
     </div>
   </main>
@@ -194,20 +208,9 @@
       });
     });
 
-    var prevScrollpos = window.pageYOffset;
-    var page1Height = document.getElementById('section1').offsetHeight;
     var navbar = document.getElementById("myNavbar");
-    var navbarHeight = navbar.offsetHeight;
-    window.onscroll = function() {
-      var currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos && currentScrollPos <= page1Height) {
-        navbar.style.top = "0px";
-      } else {
-        navbar.style.top = "-" + navbarHeight + "px";
-      }
-      prevScrollpos = currentScrollPos;
-    }
-  </script>
+    navbar.style.top = "0px"; // Always keep the navbar at the top
+</script>
 
   <!-- Bootstrap core JavaScript -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
