@@ -61,6 +61,24 @@
       z-index: 3; /* Ensures the heading appears above other elements */
       
     }
+
+    /* This will affect the scrollbar in Webkit browsers like Chrome and Safari */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #202020;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #363636;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #646464;
+    }
+
   
     /* Buttons */
     .button-container {
