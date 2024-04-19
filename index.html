@@ -187,54 +187,106 @@
 
     #section2 {
       position: relative;
-      z-index: 2;
-      background: rgba(255, 255, 255, 0.7);
+      
     }
   
-    /* Media Queries */
-    @media screen and (max-width: 1920px) {
-      body {
-        font-size: 0.8rem; /* 80% of 1rem */
-      }
-
-      h1, h2 {
-        font-size: 3.6rem; /* 80% of 4.5rem */
-        line-height: 3.6rem; /* 80% of 4.5rem */
-        margin-bottom: 0.8rem; /* 80% of 1rem */
-      }
-
-      .button-container {
-        padding-top: 4rem; /* 80% of 5rem */
-        gap: 3rem; /* 80% of 3.75rem */
-      }
-
-      .title {
-        padding-top: 80px; /* 80% of 100px */
-        margin-bottom: 4rem; /* 80% of 5rem */
-      }
-
-      .lead, .lead2, .lead3, .lead4 {
-        font-size: 1rem; /* 80% of 1.25rem */
-      }
-
-      .lead, .lead2 {
-        margin-top: 4rem; /* 80% of 5rem */
-      }
-
-      .full-vh {
-        padding-top: 3rem; /* 80% of 3.75rem */
-      }
-
-      .card, .cardguide {
-        padding: 2.4rem; /* 80% of 3rem */
-        margin-bottom: 4rem; /* 80% of 5rem */
-        border-radius: 1.2rem; /* 80% of 1.5rem */
-      }
-
-      .material-symbols-outlined {
-        font-size: 1.2rem; /* 80% of 1.5rem */
-      }
+  /* Media Queries */
+  @media screen and (max-width: 1920px) {
+    body {
+      font-size: 0.8rem; /* 80% of 1rem */
     }
+
+    h1, h2 {
+      font-size: 3.6rem; /* 80% of 4.5rem */
+      line-height: 3.6rem; /* 80% of 4.5rem */
+      margin-bottom: 0.8rem; /* 80% of 1rem */
+    }
+
+    .button-container {
+      padding-top: 4rem; /* 80% of 5rem */
+      gap: 3rem; /* 80% of 3.75rem */
+    }
+
+    .title {
+      padding-top: 80px; /* 80% of 100px */
+      margin-bottom: 4rem; /* 80% of 5rem */
+    }
+
+    .lead, .lead2, .lead3, .lead4 {
+      font-size: 1rem; /* 80% of 1.25rem */
+    }
+
+    .lead, .lead2 {
+      margin-top: 4rem; /* 80% of 5rem */
+    }
+
+    .full-vh {
+      padding-top: 3rem; /* 80% of 3.75rem */
+    }
+
+    .material-symbols-outlined {
+      font-size: 1.2rem; /* 80% of 1.5rem */
+    }
+
+
+  /* Mobile styles */
+  @media screen and (max-width: 768px) {
+    body {
+      font-size: 0.8rem;
+    }
+
+    h1, h2 {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .starter-template {
+      padding-bottom: 2rem;
+    }
+
+    .button-container {
+      flex-direction: column;
+      padding-top: 2rem;
+      gap: 2rem;
+    }
+
+    .title {
+      padding-top: 60px;
+      margin-bottom: 2rem;
+    }
+
+    .lead, .lead2, .lead3, .lead4 {
+      font-size: 1rem;
+    }
+
+    .lead, .lead2 {
+      margin-top: 2rem;
+    }
+
+    .full-vh {
+      padding-top: 2rem;
+    }
+
+    .material-symbols-outlined {
+      font-size: 1rem;
+    }
+
+    .card, .cardguide {
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .cardguide {
+      flex-direction: column;
+    }
+
+    .cardguide .step {
+      margin: 0.5rem;
+    }
+
+    }
+}
   </style>
 
 </head>
@@ -291,41 +343,40 @@
       </div>
     </div>
     <div class="container-fluid">
-      <div id="section2" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 0.5); text-align: center; height: 100vh;">
-      <h2 class="title">What is this? How does it work?</h2>
-
-      <div class="card">
-        <p class="lead3">Mapperino is a collaboration program built in Electron, made by people who have wished for features that didn't exist. The intended purpose of this application
-          is to sort beatmaps based on their similarities. The idea was inspired by an older abandoned project that aimed to do the same thing, except this is a more accurate revision of it.
-          <br><br>
-          Osu beatmaps are files containing timing points and various note types distributed over the duration of a song, including other factors. This can be utilized in calculations to find, match, and display results based on the similarity of specific factors using JS Math.
-          <span class="colored-text">Yada yada.</span><br><br>Essentially the program helps you to find more maps that feel the same.</p>
-      </div>
-
-      <div class="cardguide">
-        <div class="step">
-          <h2>Step 1</h2><br>
-          <p class="lead4">Download the latest version <a href="www.example.com">here</a> and proceed with the installation. The app requires an internet connection for the next step.</p>
-        </div>
-        <div class="step">
-          <h2>Step 2</h2><br>
-          <p class="lead4">Open the application and complete authorization. This process is handled by OAuth 2.0 provided by Osu!</p>
-        </div>
-        <div class="step">
-          <h2>Step 3</h2><br>
-          <p class="lead4">The program will prompt for the game location and proceed to search for beatmaps. From there, you can select a beatmap, and the program will display results.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-    <div id="section3" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 0.5); text-align: center; height: 100vh;">
-      <h2 class="title">Changelogs</h1>
-      <div class="card">
-        <p class="lead3">No changelog history available. Application to be released.</p>
+      <div id="section2" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 0.5); text-align: center; min-height: 100vh;">
+          <h2 class="title">What is this? How does it work?</h2>
+          <div class="card">
+              <p class="lead3">
+                  Mapperino is a collaboration program built in Electron, made by people who have wished for features that didn't exist. The intended purpose of this application
+                  is to sort beatmaps based on their similarities. The idea was inspired by an older abandoned project that aimed to do the same thing, except this is a more accurate revision of it.
+                  <br><br>
+                  Osu beatmaps are files containing timing points and various note types distributed over the duration of a song, including other factors. This can be utilized in calculations to find, match, and display results based on the similarity of specific factors using JS Math.
+                  <span class="colored-text">Yada yada.</span><br><br>Essentially the program helps you to find more maps that feel the same.
+              </p>
           </div>
-    </div>
-    <div id="section4" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 1); text-align: center; height: 100vh;">
+          <div class="cardguide">
+              <div class="step">
+                  <h2>Step 1</h2><br>
+                  <p class="lead4">Download the latest version <a href="www.example.com">here</a> and proceed with the installation. The app requires an internet connection for the next step.</p>
+              </div>
+              <div class="step">
+                  <h2>Step 2</h2><br>
+                  <p class="lead4">Open the application and complete authorization. This process is handled by OAuth 2.0 provided by Osu!</p>
+              </div>
+              <div class="step">
+                  <h2>Step 3</h2><br>
+                  <p class="lead4">The program will prompt for the game location and proceed to search for beatmaps. From there, you can select a beatmap, and the program will display results.</p>
+              </div>
+          </div>
+      </div>
+      <div id="section3" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 0.5); text-align: center; min-height: 100vh;">
+          <h2 class="title">Changelogs</h2>
+          <div class="card">
+              <p class="lead3">No changelog history available. Application to be released.</p>
+          </div>
+      </div>
+  </div>
+  <div id="section4" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 1); text-align: center; min-height: 100vh;">
       <h1 style="padding-top: 100px;">Frequently Asked Questions</h1>
       <p class="lead">Content to be added.</p>
     </div>
