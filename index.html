@@ -57,7 +57,7 @@
       font-size: 1.5rem;
       line-height: 2rem;
       margin-bottom: 5rem; /* Adjusts the space below the heading */
-      margin-top: 5rem; /* Adjusts the space above the heading */
+      margin-top: 1rem; /* Adjusts the space above the heading */
       z-index: 3; /* Ensures the heading appears above other elements */
       
     }
@@ -94,6 +94,7 @@
       margin-bottom: 5rem;
       z-index: 5;
     }
+
 
     /* Lead Text */
     .lead, .lead2, .lead3, .lead4 {
@@ -219,6 +220,11 @@
       position: relative;
       
     }
+
+    #faq-section {
+      positioN: relative;
+      top: -6rem;
+    }
   
   /* Media Queries */
   @media screen and (max-width: 1920px) {
@@ -262,7 +268,58 @@
     .material-symbols-outlined {
       font-size: 1.2rem; /* 80% of 1.5rem */
     }
+    #faq-section {
+      position: relative;
+      top: -4.8rem;
+    }
+  }
 
+  @media screen and (max-width: 1280px) and (max-height: 720px) {
+    body {
+      font-size: 0.6rem; /* Adjust as needed */
+    }
+
+    h1, h2 {
+      font-size: 2.7rem; /* Adjust as needed */
+      line-height: 2.7rem; /* Adjust as needed */
+      margin-bottom: 0.6rem; /* Adjust as needed */
+    }
+
+    h3 {
+      font-size: 0.9rem; /* Adjust as needed */
+      line-height: 1.2rem; /* Adjust as needed */
+    }
+
+    .button-container {
+      padding-top: 3rem; /* Adjust as needed */
+      gap: 2.25rem; /* Adjust as needed */
+    }
+
+    .title {
+      padding-top: 60px; /* Adjust as needed */
+      margin-bottom: 3rem; /* Adjust as needed */
+    }
+
+    .lead, .lead2, .lead3, .lead4 {
+      font-size: 0.75rem; /* Adjust as needed */
+    }
+
+    .lead, .lead2 {
+      margin-top: 3rem; /* Adjust as needed */
+    }
+
+    .full-vh {
+      padding-top: 2.25rem; /* Adjust as needed */
+    }
+
+    .material-symbols-outlined {
+      font-size: 0.9rem; /* Adjust as needed */
+    }
+    #faq-section {
+      position: relative;
+      top: -3.6rem; /* Adjust as needed */
+    }
+  }
 
   /* Mobile styles */
   @media screen and (max-width: 768px) {
@@ -320,6 +377,9 @@
       margin: 0.5rem;
     }
 
+    #faq-section {
+      position: relative;
+
     }
 }
   </style>
@@ -346,7 +406,7 @@
           <a class="nav-link" href="#section4">FAQ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Contact</a>
+          <a class="nav-link" href="">Discord</a>
         </li>
       </ul>
     </div>
@@ -375,18 +435,19 @@
         <a href="#section2" class="btn btn-success">
           <span class="material-symbols-outlined">&#xea0b;</span> Changelogs
         </a>
-      </div>
+    </div>
+    <p class="text-center text-warning">Download unavailable. App is not released yet.</p>
+
     </div>
     <div class="container-fluid">
       <div id="section2" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 0.5); text-align: center; min-height: 100vh;">
           <h2 class="title">What is this? How does it work?</h2>
           <div class="card">
               <p class="lead3">
-                  Mapperino is a collaboration program built in Electron, made by people who have wished for features that didn't exist. The intended purpose of this application
-                  is to sort beatmaps based on their similarities. The idea was inspired by an older abandoned project that aimed to do the same thing, except this is a more accurate revision of it.
+                  Mapperino is a collaboration program built in Electron. A tool for sorting out local beatmaps based on similarities.
                   <br><br>
-                  Osu beatmaps are files containing timing points and various note types distributed over the duration of a song, including other factors. This can be utilized in calculations to find, match, and display results based on the similarity of specific factors using JS Math.
-                  <span class="colored-text">Yada yada.</span><br><br>Essentially the program helps you to find more maps that feel the same.
+                  This operates by analyzing the various factors and characteristics of a beatmap, including the distribution of different note types throughout the duration of a song. These elements can then be used to generate results based on their similarities.
+                  <span class="colored-text">It's magic.</span><br><br>Essentially the program helps you to find more maps that feel the same or have similar characteristics.
               </p>
           </div>
           <div class="cardguide">
@@ -400,7 +461,7 @@
               </div>
               <div class="step">
                   <h2>Step 3</h2><br>
-                  <p class="lead4">The program will prompt for the game location and proceed to search for beatmaps. From there, you can select a beatmap, and the program will display results.</p>
+                  <p class="lead4">The program will ask the user to initiate the 'Parse Beatmaps' process. Once the beatmaps are loaded, users can search for a specific beatmap, and the program will then present the results.
               </div>
           </div>
       </div>
@@ -412,18 +473,18 @@
       </div>
   </div>
   <div id="section4" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 1); text-align: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
-    <h1>Frequently Asked Questions</h1><br>
+    <h2 class="title">Frequently Asked Questions</h2><br>
     
-    <div style="max-width: 100rem; margin: auto;">
-        <h3>Q: Is this safe to use?<br>A: Yes, it's safe to use. <a href="your_link_here">Virustotal available here</a>.</h3>
+    <div id="faq-section" style="max-width: 100rem; margin: auto;" >
+        <h3>Q: Can I download beatmaps with this?<br>A: No, this tool shows locally installed beatmaps only.</h3>
 
         <h3>Q: Do you collect any info?<br>A: No, Mapperino does not collect any of your information.</h3>
 
-        <h3>Q: Why do I need to authorize?<br>A: Some of the functions work by using OAuth 2.0.</h3>
+        <h3>Q: Why do I need to authorize?<br>A: Some of the functions work by using OAuth 2.0, which requires users to authorize.</h3>
 
-        <h3>Q: I need help!<br>A: Help requests, bug reports, suggestions or other can be done by contacting.<br>See more at <a href="your_contact_link_here">Contact</a>.</h3>
+        <h3>Q: Where can I get help?<br>A: Help requests, bug reports, suggestions or other can be done on our Discord server.</a>.</h3>
 
-        <h3>Q: Where can I view the source-code?<br>A: Undecided.</h3>
+        <h3>Q: Where can I view the source-code?<br>A: So far it's undecided.</h3>
     </div>
 </div>
   </main>
