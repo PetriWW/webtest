@@ -208,9 +208,6 @@
 
     /* Hide the video on the first page */
     #section1 {
-      background-image: url('bg1.png');
-      background-repeat: no-repeat;
-      background-size: cover;
       z-index: 2;
     }
 
@@ -227,12 +224,6 @@
       positioN: relative;
       top: -6rem;
     }
-    
-    #section4 {
-      background-image: url('bg2.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
 
     .btn {
     transition: transform 0.1s ease;
@@ -240,6 +231,14 @@
 
     .btn:hover {
         transform: scale(1.05);
+    }
+
+    #toothless {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px; /* adjust as needed */
+    height: auto;
     }
 
   /* Media Queries */
@@ -502,6 +501,7 @@
 
         <h3>Q: Where can I view the source-code?<br>A: So far it's undecided.</h3>
     </div>
+    <img id="toothless" src="toothless.gif" alt="Toothless">
 </div>
   </main>
 
