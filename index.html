@@ -208,7 +208,9 @@
 
     /* Hide the video on the first page */
     #section1 {
-      background: white;
+      background-image: url('bg1.png');
+      background-repeat: no-repeat;
+      background-size: cover;
       z-index: 2;
     }
 
@@ -225,7 +227,21 @@
       positioN: relative;
       top: -6rem;
     }
-  
+    
+    #section4 {
+      background-image: url('bg2.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .btn {
+    transition: transform 0.1s ease;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+    }
+
   /* Media Queries */
   @media screen and (max-width: 1920px) {
     body {
@@ -436,7 +452,7 @@
           <span class="material-symbols-outlined">&#xea0b;</span> Changelogs
         </a>
     </div>
-    <p class="text-center text-warning">Download unavailable. App is not released yet.</p>
+    <p class="text-center text-warning"><br>Download unavailable. App is not released yet.</p>
 
     </div>
     <div class="container-fluid">
@@ -476,7 +492,7 @@
     <h2 class="title">Frequently Asked Questions</h2><br>
     
     <div id="faq-section" style="max-width: 100rem; margin: auto;" >
-        <h3>Q: Can I download beatmaps with this?<br>A: No, this tool shows locally installed beatmaps only.</h3>
+        <h3>Q: Can I download beatmaps with this?<br>A: No, this tool works only with local beatmaps.</h3>
 
         <h3>Q: Do you collect any info?<br>A: No, Mapperino does not collect any of your information.</h3>
 
