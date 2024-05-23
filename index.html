@@ -6,6 +6,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <title>Mapperino - Osu! Beatmap Assistant Tool</title>
   <meta name="description" content="Mapperino is a modern, light-weight desktop client for assisting with Osu! beatmap search. It sorts out your beatmaps based on similarity and helps you find more maps that feel the same or have similar characteristics.">
   <meta name="keywords" content="osu beatmap tool, osu, mapperino, mapperino beatmap, mapperino tool, osu mapperino, parse beatmap tool, beatmap recommendations, beatmap assistant, beatmap similarity, beatmap search, local beatmaps, OAuth 2.0, Electron">
@@ -30,6 +31,10 @@
            url('Mona Sans/Mona-Sans.woff2') format('woff2-variations');
       font-weight: 200 900;
       font-stretch: 75% 125%;
+    }
+        /* Apply font to elements */
+        .starter-template, .title, .lead3, .lead4 {
+        font-family: 'Mona Sans', sans-serif;
     }
   
     /* Body */
@@ -162,7 +167,7 @@
 
     /* Cards */
     .card, .cardguide {
-      background-color: rgba(22, 25, 28, 0.65);
+      background-color: rgba(22, 25, 28, 0.85);
       padding: 3rem;
       margin-bottom: 5rem;
       border-radius: 1rem;
@@ -199,14 +204,6 @@
       z-index: -1;
     }
 
-    .bgvideo video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
 
     /* Hide the video on the first page */
     #section1 {
@@ -399,6 +396,30 @@
 
     }
 }
+
+#videoWrapper {
+        max-width: 75rem; /* default size */
+        margin: auto;
+    }
+
+    @media (max-width: 1200px) {
+        #videoWrapper {
+            max-width: 60rem; /* size for screens up to 1200px wide */
+        }
+    }
+
+    @media (max-width: 992px) {
+        #videoWrapper {
+            max-width: 45rem; /* size for screens up to 992px wide */
+        }
+    }
+
+    @media (max-width: 768px) {
+        #videoWrapper {
+            max-width: 30rem; /* size for screens up to 768px wide */
+        }
+    }
+
   </style>
 
 </head>
@@ -417,30 +438,26 @@
           <a class="nav-link" href="#section2">Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#section3">Changelogs</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#section4">FAQ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Discord</a>
+          <a class="nav-link" href="https://discord.gg/a8sYfyNp4y" target="_blank">Discord</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <div class="bgvideo">
-    <video id="video1" playsinline autoplay muted loop>
-      <source src="bgvideo.webm" type="video/webm">
-    </video>
-  </div>
+  <div id="videoContainer" style="position: relative;">
+    <div class="bgvideo" style="background-image: url('bg.jpg'); width: 1280px; height: 720px; border-radius: 10px; background-size: cover; background-position: center;">
+    </div>
+</div>
 
   
     <div id="section1" class="starter-template full-vh" style="background-color: #0d1117; text-align: center;">
       <h1 style="padding-top: 100px;">Project Mapperino</h1>
       <h1>Beatmap assistant for Osu!</h1>
-      <p class="lead">Modern light-weight desktop client for assisting with beatmap search. A tool that sorts out your beatmaps based on similarity.</p>
-      <p class="lead2">Want to find beatmaps that feel like the one you just played? Try out the tool now!</p>
+      <p class="lead">Modern desktop client for assisting with beatmap search. A tool that sorts out your local beatmaps based on similarity.</p>
+      <p class="lead2">Want to find out what standard beatmaps are similar? Try out the tool now!</p>
 
       <!-- Button container -->
       <div class="button-container">
@@ -448,29 +465,23 @@
         <a href="http://example.com" class="btn btn-primary">
           <span class="material-symbols-outlined">&#xf090;</span> Download
         </a>
-        <!-- Changelogs button -->
-        <a href="#section2" class="btn btn-success">
-          <span class="material-symbols-outlined">&#xea0b;</span> Changelogs
-        </a>
     </div>
-    <p class="text-center text-warning"><br>Download unavailable. App is not released yet.</p>
 
     </div>
     <div class="container-fluid">
-      <div id="section2" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 0.5); text-align: center; min-height: 100vh;">
+      <div id="section2" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 0.5); text-align: center; min-height: 175vh;">
           <h2 class="title">What is this? How does it work?</h2>
           <div class="card">
               <p class="lead3">
-                  Mapperino is a collaboration program built in Electron. A tool for sorting out local beatmaps based on similarities.
-                  <br><br>
-                  This operates by analyzing the various factors and characteristics of a beatmap, including the distribution of different note types throughout the duration of a song. These elements can then be used to generate results based on their similarities.
-                  <span class="colored-text">It's magic.</span><br><br>Essentially the program helps you to find more maps that feel the same or have similar characteristics.
+                  Mapperino is a collaboration program built in Electron and Python. A tool for sorting out local beatmaps based on similarities.<br><br>
+                  This operates by parsing local beatmaps and analyzing various factors of a beatmap, this data is then used for calculations and the results are presented to the user. The results can be copied to clipboard and pasted in-game, because currently we do not have an API for opening them directly on Osu.
+                  <span class="colored-text">It's still WIP.</span><br><br>Essentially the program helps you to find more standard maps that feel the same or have similar characteristics.
               </p>
           </div>
           <div class="cardguide">
               <div class="step">
                   <h2>Step 1</h2><br>
-                  <p class="lead4">Download the latest version <a href="www.example.com">here</a> and proceed with the installation. The app requires an internet connection for the next step.</p>
+                  <p class="lead4">Download the latest version <a href="www.example.com">here</a> and unpack the file. The next step requires online connection.</p>
               </div>
               <div class="step">
                   <h2>Step 2</h2><br>
@@ -481,27 +492,36 @@
                   <p class="lead4">The program will ask the user to initiate the 'Parse Beatmaps' process. Once the beatmaps are loaded, users can search for a specific beatmap, and the program will then present the results.
               </div>
           </div>
-      </div>
-      <div id="section3" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 0.5); text-align: center; min-height: 100vh;">
-          <h2 class="title">Changelogs</h2>
-          <div class="card">
-              <p class="lead3">No changelog history available. Application to be released.</p>
-          </div>
+
+          <div id="videoWrapper">
+            <div id="videoContainer" class="embed-responsive embed-responsive-16by9" style="position: relative; margin-bottom: 10rem;">
+                <video id="myVideo" class="embed-responsive-item" muted playsinline style="border-radius: 10px; object-fit: cover;" draggable="false">
+                    <source src="movie.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <i id="videoIcon" class="material-icons" style="font-size: 48px; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.7); padding: 10px; border-radius: 50%; cursor: pointer;" draggable="false">play_arrow</i>
+            </div>
+        </div>
+
       </div>
   </div>
   <div id="section4" class="starter-template full-vh" style="background-color: rgba(22, 27, 34, 1); text-align: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
     <h2 class="title">Frequently Asked Questions</h2><br>
     
-    <div id="faq-section" style="max-width: 100rem; margin: auto;" >
-        <h3>Q: Can I download beatmaps with this?<br>A: No, this tool works only with local beatmaps.</h3>
+    <div id="faq-section" class="container" >
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <h3><br>Q: Can I download beatmaps with this?<br>A: No, this tool works only with local beatmaps.</h3>
 
-        <h3>Q: Do you collect any info?<br>A: No, Mapperino does not collect any of your information.</h3>
+                <h3>Q: Does this work for all game modes?<br>A: No, Mapperino currently works only for standard mode beatmaps.</h3>
 
-        <h3>Q: Why do I need to authorize?<br>A: Some of the functions work by using OAuth 2.0, which requires users to authorize.</h3>
+                <h3>Q: Why do I need to authorize?<br>A: Some of the functions work by using OAuth 2.0, which requires users to authorize.</h3>
 
-        <h3>Q: Where can I get help?<br>A: Help requests, bug reports, suggestions etc can be done on our Discord server.</h3>
+                <h3>Q: Where can I get help?<br>A: Help requests, bug reports, suggestions etc can be done on our Discord server.</h3>
 
-        <h3>Q: Where can I view the source-code?<br>A: So far it's undecided.</h3>
+                <h3>Q: Where can I view the source-code?<br>A: So far it's undecided.</h3>
+            </div>
+        </div>
     </div>
     <img id="toothless" src="toothless.gif" alt="Toothless">
 </div>
@@ -510,16 +530,42 @@
   <script>
     
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', e => {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+        document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
         });
-      });
     });
+});
 
-    var navbar = document.getElementById("myNavbar");
-    navbar.style.top = "0px"; // Always keep the navbar at the top
+const navbar = document.getElementById("myNavbar");
+navbar.style.top = "0px"; // Always keep the navbar at the top
+
+const video = document.getElementById('myVideo');
+const videoIcon = document.getElementById('videoIcon');
+
+videoIcon.addEventListener('click', e => {
+    e.stopPropagation(); // Prevent the event from bubbling up to the video
+    video.click(); // Simulate a click on the video
+});
+
+video.addEventListener('click', () => {
+    if (video.paused) {
+        video.play();
+        videoIcon.style.display = 'none';
+    } else {
+        video.pause();
+        videoIcon.innerText = 'play_arrow';
+        videoIcon.style.display = 'block';
+    }
+});
+
+video.addEventListener('ended', () => {
+    video.pause();
+    videoIcon.innerText = 'repeat';
+    videoIcon.style.display = 'block';
+});
+
 </script>
 
   <!-- Bootstrap core JavaScript -->
